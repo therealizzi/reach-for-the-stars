@@ -15,9 +15,9 @@ function randNum(){
 	buttonTally = 0
 // Need to link C1, C2, C3, C4 to generate buttonValues
 
-	button1 = Math.floor((Math.random()+1) * 10);
-	button2 = Math.floor((Math.random()+1) * 8);
-	button3 = Math.floor((Math.random()+1) * 3);
+	button1 = Math.floor((Math.random()+1) * 2);
+	button2 = Math.floor((Math.random()+1) * 3);
+	button3 = Math.floor((Math.random()+1) * 4);
 	button4 = Math.floor((Math.random()+1) * 5);
 
 	document.getElementById("scoreTarget").innerHTML = "Target: "+scoreTarget;

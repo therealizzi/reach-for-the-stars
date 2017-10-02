@@ -44,24 +44,24 @@ p {
 }
 
 button {
-    height: 68px;
-    width: 70px;
+    height: 77px;
+    width: 82px;
 }
 
 .crys1 {
-    background-image: url("../images/greenstar.png"); 
+    background-image: url("../images/star1.bmp"); 
 }
 
 .crys2 {
-    background-image: url("../images/goldstar.png"); 
+    background-image: url("../images/star2.bmp"); 
 }
 
 .crys3 {
-    background-image: url("../images/bluestar.png"); 
+    background-image: url("../images/star3.bmp"); 
 }
 
 .crys4 {
-    background-image: url("../images/purplestar.png"); 
+    background-image: url("../images/star4.bmp"); 
 }
 
 .score {
