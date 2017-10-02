@@ -13,6 +13,7 @@ function randNum(){
 	scoreTarget = Math.floor((Math.random()+1) * 40);
 
 	buttonTally = 0
+
 // Need to link C1, C2, C3, C4 to generate buttonValues
 
 	button1 = Math.floor((Math.random()+1) * 2);
@@ -20,7 +21,7 @@ function randNum(){
 	button3 = Math.floor((Math.random()+1) * 4);
 	button4 = Math.floor((Math.random()+1) * 5);
 
-	document.getElementById("scoreTarget").innerHTML = "Target: "+scoreTarget;
+	document.getElementById("scoreTarget").innerHTML = "Critical Star Heading: "+scoreTarget;
 	document.getElementById("buttonTally").innerHTML = buttonTally;	
 
 	document.getElementById("wins").innerHTML = "Wins: "+wins;
@@ -29,13 +30,15 @@ function randNum(){
 
 randNum();
 
+// Console logs
+
 console.log(scoreTarget);
 console.log(button1);
 console.log(button2);
 console.log(button3);
 console.log(button4);
 
-// Need to combine buttonValues into buttonTally
+// Button 1 - with tally, win and loss incrementer
 
 document.getElementById("crys1").addEventListener("click", function(){
 	buttonTally += button1;
@@ -43,12 +46,16 @@ document.getElementById("crys1").addEventListener("click", function(){
 	if (scoreTarget == buttonTally){
 		wins ++;
 		randNum();
+		alert("We all survived! You're a hero!")
 	} 
 
 	if (scoreTarget < buttonTally){
 		losses ++;
 		randNum();
+		alert("Wow. We dead.")
 	}});
+
+// Button 2 - with tally, win and loss incrementer
 
 document.getElementById("crys2").addEventListener("click", function(){
 	buttonTally += button2;
@@ -56,12 +63,16 @@ document.getElementById("crys2").addEventListener("click", function(){
 	if (scoreTarget == buttonTally){
 		wins ++;
 		randNum();
+		alert("We all survived! You're a hero!")		
 	} 
 
 	if (scoreTarget < buttonTally){
 		losses ++;
 		randNum();
+		alert("Don't be too hard on yourself, but we're all gonna die because of you")
 	}});
+
+// Button 3 - with tally, win and loss incrementer
 
 document.getElementById("crys3").addEventListener("click", function(){
 	buttonTally += button3;
@@ -69,12 +80,16 @@ document.getElementById("crys3").addEventListener("click", function(){
 	if (scoreTarget == buttonTally){
 		wins ++;
 		randNum();
+		alert("We all survived! You're a hero!")
 	} 
 
 	if (scoreTarget < buttonTally){
 		losses ++;
 		randNum();
+		alert("We all died!! Do you believe in re-incarnation?")
 	}});
+
+// Button 4 - with tally, win and loss incrementer
 
 document.getElementById("crys4").addEventListener("click", function(){
 	buttonTally += button4;
@@ -82,17 +97,12 @@ document.getElementById("crys4").addEventListener("click", function(){
 	if (scoreTarget == buttonTally){
 		wins ++;
 		randNum();
+		alert("We all survived! You're a hero!")
 	} 
 
 	if (scoreTarget < buttonTally){
 		losses ++;
 		randNum();
+		alert("We missed it... well.. Guess we better drink the rest of the rum")
 	}});
-
-// Need to compare scoreTarget and buttonTally
-
-
-// If scoreTarget=buttonTally, need to win++
-// If scoreTarget<buttonTAlly, need to lose++
-
 
