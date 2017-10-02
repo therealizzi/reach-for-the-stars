@@ -1,0 +1,71 @@
+
+body {
+    background-image: url("../images/62929440-beautiful-wallpapers.jpg");
+}
+
+span {
+    color: white;
+    font: bold 15px/10px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+}
+
+.header {
+    color: white;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+}
+
+.target {
+      color: white;
+    font: 25px/35px Helvetica, Sans-Serif;
+    letter-spacing: 4px;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    height: 100px;
+    width: 100%;
+}
+
+.target2 {
+      color: white;
+    font: 25px/35px Helvetica, Sans-Serif;
+    letter-spacing: 4px;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.7);
+    padding: 5px;
+    height: 40px;
+    width: 100%;
+}
+
+button {
+    height: 68px;
+    width: 70px;
+}
+
+.crys1 {
+    background-image: url("../images/greenstar.png"); 
+}
+
+.crys2 {
+    background-image: url("../images/goldstar.png"); 
+}
+
+.crys3 {
+    background-image: url("../images/bluestar.png"); 
+}
+
+.crys4 {
+    background-image: url("../images/purplestar.png"); 
+}
+
+.score {
+    background-color: teal;
+    height: 20px;
+    width: 250px;
+}    

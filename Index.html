@@ -1,39 +1,97 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Crystals Collector</title>
+
+	<title>Reach For The Stars</title>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Squada+One" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 <body>
 
-<p>You will be given a random number at the start of the game</p>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-4">
+	<h2 class="header">Reach For The Stars</h2>
+  </div>
+ </div>
+</div>
 
-<p>There are four crystals below. By clicking on a crystal you will ad a specific amount of points to your total score.</p>
 
-<p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-8">
+	<br>
+	<p id="hide">You will be given a random number at the start of the game</p>
 
-<p>The value of each crystal is hidden from you until you click on it</p>
+	<p>There are four stars below. By clicking on a stars you will ad a specific amount of points to your total score.</p>
 
-<p>Each time when the game starts, the game will change the values of each crystal</p>
+	<p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
 
-<br>
+	<p>The value of each star is hidden from you until you click on it</p>
 
-<br>
+	<p>Each time when the game starts, the game will change the values of each star</p>
+	<br>
+  	<br>
+  	<br>
+  </div>
+ </div>
+</div>
 
-<dir id="valueToMatch"></dir>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3">
+	<h2 class="header target"><p id=scoreTarget></p></h2>
+  </div>
+    <div class="col-sm-3">
+	<h2 class="header target2"><p id=wins></p></h2>
+	<h2 class="header target2"><p id=losses></p></h2>
+  </div>
+ </div>
+</div>
 
-<dir id="winTally"></dir>
+<div class="container">
+ <div class="row">
+    <div class="col-sm-1">
+	<button class="header crys1" id="crys1"></button>
+  </div>
+    <div class="col-sm-1">
+	<button class="header crys2" id="crys2"></button>
+  </div>
+    <div class="col-sm-1">
+	<button class="header crys3" id="crys3"></button>
+  </div>
+    <div class="col-sm-1">
+	<button class="header crys4" id="crys4"></button>
+  </div>
+ </div>
+</div>
 
-<dir id="loseTally"></dir>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3">
+	<h4 class="header Score" id="crys1">Total score:</h4>
+  </div>
+ </div>
+</div>
 
-<p id="crystalOne"></p>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3">
+	<h2 class="header" id="buttonTally">buttonTally Here<p id="score"></p></h2>
+  </div>
+ </div>
+</div>
 
-<p id="crystalTwo"></p>
 
-<p id="crystalThree"></p>
-
-<p id="crystalFour"></p>
-
-<p><span></span></p>
+<script src="assets/javascript/game.js"></script>
 
 
 </body>
