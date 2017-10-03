@@ -40,9 +40,9 @@ console.log(button4);
 
 // Button 1 - with tally, win and loss incrementer
 
-document.getElementById("crys1").addEventListener("click", function(){
+$("#crys1").on("click", function(){
 	buttonTally += button1;
-	document.getElementById("buttonTally").innerHTML = buttonTally;
+	$("#buttonTally").html(buttonTally);
 	if (scoreTarget == buttonTally){
 		wins ++;
 		randNum();
@@ -53,13 +53,14 @@ document.getElementById("crys1").addEventListener("click", function(){
 		losses ++;
 		randNum();
 		alert("Wow. We dead.")
-	}});
+	}
+});
 
 // Button 2 - with tally, win and loss incrementer
 
-document.getElementById("crys2").addEventListener("click", function(){
+$("#crys2").on("click", function(){
 	buttonTally += button2;
-	document.getElementById("buttonTally").innerHTML = buttonTally;
+	$("#buttonTally").html(buttonTally);
 	if (scoreTarget == buttonTally){
 		wins ++;
 		randNum();
@@ -70,13 +71,14 @@ document.getElementById("crys2").addEventListener("click", function(){
 		losses ++;
 		randNum();
 		alert("Don't be too hard on yourself, but we're all gonna die because of you")
-	}});
+	}
+});
 
 // Button 3 - with tally, win and loss incrementer
 
-document.getElementById("crys3").addEventListener("click", function(){
+$("#crys3").on("click", function(){
 	buttonTally += button3;
-	document.getElementById("buttonTally").innerHTML = buttonTally;
+	$("#buttonTally").html(buttonTally);
 	if (scoreTarget == buttonTally){
 		wins ++;
 		randNum();
@@ -87,13 +89,14 @@ document.getElementById("crys3").addEventListener("click", function(){
 		losses ++;
 		randNum();
 		alert("We all died!! Do you believe in re-incarnation?")
-	}});
+	}
+});
 
 // Button 4 - with tally, win and loss incrementer
 
-document.getElementById("crys4").addEventListener("click", function(){
+$("#crys4").on("click", function(){
 	buttonTally += button4;
-	document.getElementById("buttonTally").innerHTML = buttonTally;
+	$("#buttonTally").html(buttonTally);
 	if (scoreTarget == buttonTally){
 		wins ++;
 		randNum();
@@ -103,6 +106,7 @@ document.getElementById("crys4").addEventListener("click", function(){
 	if (scoreTarget < buttonTally){
 		losses ++;
 		randNum();
-		alert("We missed it... well.. Guess we better drink the rest of the rum")
-	}});
+		alert("Well.... Better drink the rest of the rum")
+	}
+});
 
