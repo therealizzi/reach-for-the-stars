@@ -10,16 +10,16 @@ var phil = 0;
 
 function randNum() {
 
- scoreTarget = Math.floor((Math.random() + 1) * 40);
+ scoreTarget = Math.floor((Math.random() * (120 - 19)) + 19);
 
  buttonTally = 0;
 
 // Need to link C1, C2, C3, C4 to generate buttonValues
 
- button1 = Math.floor((Math.random() + 1) * 2);
- button2 = Math.floor((Math.random() + 1) * 3);
- button3 = Math.floor((Math.random() + 1) * 4);
- button4 = Math.floor((Math.random() + 1) * 5);
+ button1 = Math.floor((Math.random() * (12 - 1)) + 1);
+ button2 = Math.floor((Math.random() * (12 - 1)) + 1);
+ button3 = Math.floor((Math.random() * (12 - 1)) + 1);
+ button4 = Math.floor((Math.random() * (12 - 1)) + 1);
 
  $("#scoreTarget").html("Critical Star Heading: "+scoreTarget);
  $("#buttonTally").html(buttonTally);	
