@@ -1,111 +1,132 @@
-// these variables are based on HTML "id" tags
+//these are global variables
+var time = "";
+var x = "";
+var pause = "";
+var wins = "";
+var losses = "";
 
-var scoreTarget;
-var buttonTally = 0;
-var wins = 0;
-var losses = 0;
-var phil = 0;
+//These are the question objects
+var question1 = {
+	question: "What state am I from",
+	answer1: "Hollywood",
+	answer2: "State of mind",
+	answer3: "New Jersey",
+	answer4: "Montana",
+	correct: "Montana",
+	solution: "answerButton4",
+	image: "<img src=\"assets/images/star1.bmp\">",
+};
 
-// Need to generate a random scoreTarget automatically
+var question2 = {
+	question: "How hard is winning?",
+	answer1: "Not hard",
+	answer2: "A little hard",
+	answer3: "Super duper hard",
+	answer4: "I'm not sure",
+	correct: "Super duper hard",
+	solution: "answerButton3",
+	image: "<img src=\"assets/images/star2.bmp\">",
+};
 
-function randNum() {
+//This function shows the final score
+function endGame(){
+	$("#heartbeat").html("Wins: "+wins);
+	$("#question").html("Losses: "+losses);
+};
 
- scoreTarget = Math.floor((Math.random() * (120 - 19)) + 19);
+//This array holds the question objects
+var questionBank = [question1, question2];
 
- buttonTally = 0;
+var activeQuestion = "";
 
-// Need to link C1, C2, C3, C4 to generate buttonValues
+//This function picks the question and populates the answer buttons
+function pickQuestion(){
+	if (questionBank.length > 0){
+		var i = Math.floor(Math.random()*questionBank.length)
+		activeQuestion = questionBank[i];
+		$("#question").html(questionBank[i].question);
+		$("#answerButton1").html(questionBank[i].answer1);
+		$("#answerButton2").html(questionBank[i].answer2);
+		$("#answerButton3").html(questionBank[i].answer3);	
+		$("#answerButton4").html(questionBank[i].answer4);
+		questionBank.splice(i,1);
+	} else {
+		endGame();
+	};
+};
 
- button1 = Math.floor((Math.random() * (12 - 1)) + 1);
- button2 = Math.floor((Math.random() * (12 - 1)) + 1);
- button3 = Math.floor((Math.random() * (12 - 1)) + 1);
- button4 = Math.floor((Math.random() * (12 - 1)) + 1);
+//This function runs pickQuestion() and starts a new round
+function startTimer(){
 
- $("#scoreTarget").html("Critical Star Heading: "+scoreTarget);
- $("#buttonTally").html(buttonTally);	
- $("#wins").html("Wins: "+wins);
- $("#losses").html("Losses: "+losses);
-}
+	//This clears the image div before each new game
+	$("#image").html("")
+	
+	//This picks a new question
+	pickQuestion()
 
-randNum();
+	//This starts the timer
+ 	time = 30;
+ 	x = setInterval(function(){
 
-// Console logs
+ 	//This displays the countdown
+ 	time --;
+ 	$("#heartbeat").html(time);
 
-console.log(scoreTarget);
-console.log(button1);
-console.log(button2);
-console.log(button3);
-console.log(button4);
+ 	//This stops the countdown at 0:00
+ 	if (time == 0){
+ 		clearInterval(x);
+ 	}
+ 	}, 1000);
+};
 
-// Button 1 - with tally, win and loss incrementer
-
-$("#crys1").on("click", function(){
-	buttonTally += button1;
-	$("#buttonTally").html(buttonTally);
-	if (scoreTarget == buttonTally){
-		wins ++;
-		randNum();
-		alert("We all survived! You're a hero!")
-	} 
-
-	if (scoreTarget < buttonTally){
-		losses ++;
-		randNum();
-		alert("Wow. We dead.")
-	}
+//This "Start Game" button function runs startTimer()
+$(".startgame").click(function(){
+	startTimer();
 });
 
-// Button 2 - with tally, win and loss incrementer
+//This checks answer, starts break-counter, and shows result
+var test = "";
 
-$("#crys2").on("click", function(){
-	buttonTally += button2;
-	$("#buttonTally").html(buttonTally);
-	if (scoreTarget == buttonTally){
-		wins ++;
-		randNum();
-		alert("We all survived! You're a hero!")		
-	} 
+$(document).ready(function(){
 
-	if (scoreTarget < buttonTally){
-		losses ++;
-		randNum();
-		alert("Don't be too hard on yourself, but we're all gonna die because of you")
-	}
+	$(".answerButtons").click(function(){
+		
+//This displays the correct answer and image
+		// $("#answerImage").img
+		console.log(activeQuestion.solution)
+
+//This checks the answer for the button clicked
+		var test = jQuery(this).attr("id");	
+		console.log(test);
+
+		if (test === activeQuestion.solution){
+			console.log("true")
+			$("#question").html("Your correct, the answer is: "+activeQuestion.correct)
+			wins++;
+		} else {
+			console.log("wtf")
+			$("#question").html("Your wrong, the answer is: "+activeQuestion.correct)
+			losses++;
+		}
+
+//This clears counter and counts down 3 seconds
+		clearInterval(x);
+
+ 		//This adds an image to the img div
+ 		$("#image").html(activeQuestion.image);
+		
+		pause = 3;
+		 x = setInterval(function(){
+ 		pause --;
+
+ 		$("#heartbeat").html(pause);
+
+ //This ends counter at 0 and initiates next game
+ 		if (pause == 0){
+ 		clearInterval(x);
+ 		startTimer();
+ 		}; 
+ 		}, 1000);
+
+	});
 });
-
-// Button 3 - with tally, win and loss incrementer
-
-$("#crys3").on("click", function(){
-	buttonTally += button3;
-	$("#buttonTally").html(buttonTally);
-	if (scoreTarget == buttonTally){
-		wins ++;
-		randNum();
-		alert("We all survived! You're a hero!")
-	} 
-
-	if (scoreTarget < buttonTally){
-		losses ++;
-		randNum();
-		alert("We all died!! Do you believe in re-incarnation?")
-	}
-});
-
-// Button 4 - with tally, win and loss incrementer
-
-$("#crys4").on("click", function(){
-	buttonTally += button4;
-	$("#buttonTally").html(buttonTally);
-	if (scoreTarget == buttonTally){
-		wins ++;
-		randNum();
-		alert("We all survived! You're a hero!")
-	} 
-
-	if (scoreTarget < buttonTally){
-		losses ++;
-		randNum();
-		alert("Well.... Better drink the rest of the rum")
-	}
-});
-

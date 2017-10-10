@@ -1,7 +1,5 @@
 
-body {
-    background-image: url("../images/62929440-beautiful-wallpapers.jpg");
-}
+
 
 span {
     color: white;
@@ -50,19 +48,19 @@ button {
     width: 82px;
 }
 
-.crys1 {
+.img1 {
     background-image: url("../images/star1.bmp"); 
 }
 
-.crys2 {
+.img2 {
     background-image: url("../images/star2.bmp"); 
 }
 
-.crys3 {
+.img3 {
     background-image: url("../images/star3.bmp"); 
 }
 
-.crys4 {
+.img4 {
     background-image: url("../images/star4.bmp"); 
 }
 
